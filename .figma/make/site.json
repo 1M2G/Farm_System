@@ -1,0 +1,10 @@
+{
+  "description": "Streamlines project management by tracking charters, scopes, deliverables, and work plans for efficient implementation and easy progress monitoring.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
