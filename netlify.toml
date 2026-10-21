@@ -1,0 +1,32 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  node_bundler = "esbuild"
+
+[dev]
+  command = "corepack pnpm exec vite --host 127.0.0.1 --port 5173 --strictPort"
+  targetPort = 5173
+  port = 8443
+  autoLaunch = false
+  envFiles = [".env"]
+
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/api-health"
+  status = 200
+
+[[redirects]]
+  from = "/api/farms"
+  to = "/.netlify/functions/api-farms"
+  status = 200
+
+[[redirects]]
+  from = "/api/payments/initiate"
+  to = "/.netlify/functions/api-payments-initiate"
+  status = 200
